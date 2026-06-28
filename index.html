@@ -1,0 +1,1497 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Green Basket | Fresh Groceries & Organic Food Storefront</title>
+  <meta name="description"
+    content="Shop organic fruits, fresh vegetables, dairy, and bakery items online at Green Basket. Fast 20-minute delivery to your doorstep. Free delivery above ₹499.">
+  <link rel="stylesheet" href="css/style.css?v=2.0">
+  <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+</head>
+
+<body>
+
+  <div class="app-container">
+
+    <!-- Full Width Stacked Promos -->
+    <div class="full-width-promos">
+      <div class="top-promo-bar-full">
+        <span>Get <strong>30% OFF</strong> your first order</span>
+        <span class="promo-separator">✦</span>
+        <span>Order now and get it delivered within <strong>20 minutes</strong></span>
+      </div>
+      <div class="header-container">
+        <div class="top-announcement-banner">
+          🚀 Get FREE Delivery on all orders above ₹499! Shop Now.
+        </div>
+      </div>
+
+      <!-- New Header Layout -->
+      <header class="new-header-layout">
+        <!-- Left Space Filler & Brand -->
+        <div class="header-left">
+          <div class="brand-section" id="brand-logo-btn" style="cursor: pointer;">
+            <div class="brand-icon"
+              style="background: transparent; display: flex; align-items: center; justify-content: center; width: 36px; height: 36px;">
+              <img src="assets/logo.svg" alt="Green Basket Logo"
+                style="width: 100%; height: 100%; object-fit: contain;">
+            </div>
+            <div class="brand-name">Green<span>Basket</span></div>
+          </div>
+        </div>
+
+        <!-- Center: Search Bar -->
+        <div class="header-center">
+          <div class="nav-search-container">
+            <input type="text" id="search-input" class="nav-search-input"
+              placeholder="Search your products, categories or brands...">
+            <svg class="search-icon-svg" viewBox="0 0 24 24">
+              <path
+                d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z" />
+            </svg>
+          </div>
+        </div>
+
+        <div class="header-right">
+          <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle light/dark theme">
+            <svg class="theme-icon-svg" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              style="transition: transform 0.3s ease;"></svg>
+          </button>
+          <div class="header-actions">
+            <div class="action-btn-wrapper" style="position: relative;">
+              <button class="action-btn" id="location-btn" aria-label="Select Delivery Location">
+                <span class="location-icon">📍</span>
+                <span id="selected-location-text">New Delhi, IN</span>
+                <span class="dropdown-chevron">▾</span>
+              </button>
+              <div id="location-dropdown-popover" class="custom-dropdown-popover">
+                <div class="dropdown-item active" data-value="delhi">New Delhi, IN</div>
+                <div class="dropdown-item" data-value="mumbai">Mumbai, IN</div>
+                <div class="dropdown-item" data-value="bangalore">Bangalore, IN</div>
+                <div class="dropdown-item" data-value="chennai">Chennai, IN</div>
+                <div class="dropdown-item" data-value="kolkata">Kolkata, IN</div>
+                <div class="dropdown-item" data-value="kochi">Kochi, IN</div>
+              </div>
+            </div>
+            <!-- Wishlist Nav Button -->
+            <button class="nav-icon-btn" id="nav-wishlist-btn" aria-label="Wishlist">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
+                </path>
+              </svg>
+              <span class="nav-icon-label">Wishlist</span>
+              <span class="nav-badge" id="wishlist-nav-badge" style="display:none;">0</span>
+            </button>
+            <!-- Account Nav Button -->
+            <button class="nav-icon-btn" id="nav-account-btn" aria-label="Account">
+              <svg viewBox="0 0 24 24">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                <circle cx="12" cy="7" r="4"></circle>
+              </svg>
+              <span class="nav-icon-label">Account</span>
+            </button>
+            <div class="action-btn-wrapper" style="position: relative;">
+              <button class="nav-icon-btn" id="cart-btn" aria-label="Shopping Basket">
+                <svg viewBox="0 0 24 24">
+                  <circle cx="9" cy="21" r="1"></circle>
+                  <circle cx="20" cy="21" r="1"></circle>
+                  <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                </svg>
+                <span class="nav-icon-label">Cart</span>
+                <span id="cart-badge" class="nav-badge">0</span>
+              </button>
+              <div id="cart-dropdown-popover" class="custom-dropdown-popover cart-popover">
+                <div class="cart-popover-header">
+                  <h3>Your Cart</h3>
+                </div>
+                <div id="cart-popover-items" class="cart-popover-items">
+                  <!-- Dynamically updated -->
+                </div>
+                <div class="cart-popover-footer">
+                  <div class="cart-popover-total">
+                    <span>Total:</span>
+                    <span id="cart-popover-total-val">₹0.00</span>
+                  </div>
+                  <button class="checkout-btn" id="cart-popover-checkout-btn">Checkout</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+    </div>
+
+    <!-- GROCERY HOMEPAGE STOREFRONT VIEW -->
+    <main id="store-view" class="page-view active">
+
+      <!-- Secondary Navigation Bar -->
+      <div class="secondary-nav-bar">
+        <div class="sec-nav-left">
+          <a href="#" id="nav-products" class="sec-nav-link active">Products</a>
+          <a href="#" id="nav-whats-new" class="sec-nav-link">Whats new</a>
+          <a href="#" id="nav-deals" class="sec-nav-link">Deals & Offers</a>
+          <a href="#" id="nav-meal-prep" class="sec-nav-link">Meal Prep Guides</a>
+          <a href="#" id="nav-delivery" class="sec-nav-link">Delivery / Live Tracker</a>
+          <a href="#" id="nav-support" class="sec-nav-link">Help & Support</a>
+        </div>
+        <div class="sec-nav-right">
+          <a href="tel:09617885599" class="sec-nav-link email-support-btn"><span>📞</span> 09617885599 | 24/7
+            Support</a>
+          <a href="#" class="sec-nav-link email-support-btn"><span>📧</span> Email support</a>
+        </div>
+      </div>
+
+      <!-- Full Page Video Hero Section -->
+      <section class="hero-section-full">
+        <video class="hero-video-bg" autoplay muted loop playsinline>
+          <source src="assets/hero-video.mp4" type="video/mp4">
+        </video>
+        <div class="hero-video-overlay"></div>
+        <div class="hero-video-content">
+          <span class="hero-video-badge">Welcome to Green Basket</span>
+          <h1 class="hero-video-title">Your One-Stop Shop for<br>Fresh &amp; Quality Groceries</h1>
+          <p class="hero-video-subtitle">Discover a seamless grocery shopping experience with Green Basket. From
+            farm-fresh fruits and vegetables to premium pantry staples, we've got everything you need to fill your
+            basket with goodness, all in one place.</p>
+          <div class="hero-video-cta">
+            <button class="btn-primary-orange"
+              onclick="document.getElementById('catalog-section').scrollIntoView({behavior: 'smooth'})">Shop
+              Now →</button>
+            <button class="btn-outline"
+              onclick="document.querySelector('.promo-banners-grid').scrollIntoView({behavior: 'smooth'})">Explore
+              Products</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Hero Banner Slider Section -->
+      <section class="hero-section">
+        <div class="hero-banner-slider">
+
+          <!-- Slide 1: FreshMart Banner -->
+          <div class="hero-slide active">
+            <div class="hero-banner freshmart-banner">
+              <div class="hero-content">
+                <div class="freshmart-badge">
+                  <span class="badge-icon">🌿</span> Freshness You Can Trust
+                </div>
+                <h1 class="hero-title">Groceries Delivered<br><span>Fresh</span> to Your Doorstep</h1>
+                <p class="hero-subtitle">Wide range of fresh fruits, vegetables, staples, snacks &amp; more. Quality you
+                  love, convenience you deserve.</p>
+                <div class="hero-cta freshmart-cta">
+                  <button class="btn-shop-now"
+                    onclick="document.getElementById('catalog-section').scrollIntoView({behavior: 'smooth'})">Shop Now
+                    &rarr;</button>
+                  <button class="btn-how-works"
+                    onclick="document.getElementById('catalog-section').scrollIntoView({behavior: 'smooth'})">
+                    <span class="play-btn-circle">
+                      <svg viewBox="0 0 24 24" width="12" height="12" fill="currentColor">
+                        <polygon points="8 5 8 19 19 12 8 5" />
+                      </svg>
+                    </span>
+                    See How It Works
+                  </button>
+                </div>
+                <div class="freshmart-features">
+                  <div class="fm-feature">
+                    <span class="fm-feature-icon">
+                      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor"
+                        stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 2a10 10 0 0 1 10 10c0 5.523-4.477 10-10 10S2 17.523 2 12A10 10 0 0 1 12 2z" />
+                        <path d="M12 22V12" />
+                      </svg>
+                    </span>
+                    <div class="fm-feature-text">
+                      <strong>100% Fresh</strong>
+                      <span>Products</span>
+                    </div>
+                  </div>
+                  <div class="fm-feature">
+                    <span class="fm-feature-icon">
+                      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor"
+                        stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="1" y="3" width="15" height="13" />
+                        <polygon points="16 8 20 8 23 11 23 16 16 16 16 8" />
+                        <circle cx="5.5" cy="18.5" r="2.5" />
+                        <circle cx="18.5" cy="18.5" r="2.5" />
+                      </svg>
+                    </span>
+                    <div class="fm-feature-text">
+                      <strong>On-Time</strong>
+                      <span>Delivery</span>
+                    </div>
+                  </div>
+                  <div class="fm-feature">
+                    <span class="fm-feature-icon">
+                      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor"
+                        stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z" />
+                        <line x1="7" y1="7" x2="7.01" y2="7" />
+                      </svg>
+                    </span>
+                    <div class="fm-feature-text">
+                      <strong>Best Prices</strong>
+                      <span>Guaranteed</span>
+                    </div>
+                  </div>
+                  <div class="fm-feature">
+                    <span class="fm-feature-icon">
+                      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor"
+                        stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+                        <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+                      </svg>
+                    </span>
+                    <div class="fm-feature-text">
+                      <strong>Secure</strong>
+                      <span>Payments</span>
+                    </div>
+                  </div>
+                </div>
+                <!-- Floating leaves over text area -->
+                <div class="floating-leaf leaf-1"></div>
+                <div class="floating-leaf leaf-2"></div>
+                <div class="floating-leaf leaf-3"></div>
+              </div>
+              <div class="hero-image-side freshmart-image-side">
+                <img src="assets/hero_slide1.png" alt="Fresh Grocery Basket" class="hero-slide-img">
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 2: Fastest Delivery -->
+          <div class="hero-slide">
+            <div class="hero-banner freshmart-banner">
+              <div class="hero-content">
+                <div class="freshmart-badge">
+                  <span class="badge-icon">⚡</span> Fastest Delivery
+                </div>
+                <h1 class="hero-title">Fresh Groceries<br>Delivered in <span>20 Minutes</span></h1>
+                <p class="hero-subtitle">Get the finest organic produce, daily dairy essentials, and fresh bakery goods
+                  handpicked directly from local farms straight to your table.</p>
+                <div class="hero-cta freshmart-cta">
+                  <button class="btn-shop-now"
+                    onclick="document.getElementById('catalog-section').scrollIntoView({behavior: 'smooth'})">Shop Now
+                    &rarr;</button>
+                  <button class="btn-how-works"
+                    onclick="document.getElementById('catalog-section').scrollIntoView({behavior: 'smooth'})">
+                    <span class="play-btn-circle">
+                      <svg viewBox="0 0 24 24" width="12" height="12" fill="currentColor">
+                        <polygon points="8 5 8 19 19 12 8 5" />
+                      </svg>
+                    </span>
+                    View Deals
+                  </button>
+                </div>
+                <div class="freshmart-features">
+                  <div class="fm-feature">
+                    <span class="fm-feature-icon">
+                      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor"
+                        stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10" />
+                        <polyline points="12 6 12 12 16 14" />
+                      </svg>
+                    </span>
+                    <div class="fm-feature-text">
+                      <strong>20-Min</strong>
+                      <span>Delivery</span>
+                    </div>
+                  </div>
+                  <div class="fm-feature">
+                    <span class="fm-feature-icon">
+                      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor"
+                        stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 2a10 10 0 0 1 10 10c0 5.523-4.477 10-10 10S2 17.523 2 12A10 10 0 0 1 12 2z" />
+                        <path d="M12 22V12" />
+                      </svg>
+                    </span>
+                    <div class="fm-feature-text">
+                      <strong>Farm</strong>
+                      <span>Fresh</span>
+                    </div>
+                  </div>
+                  <div class="fm-feature">
+                    <span class="fm-feature-icon">
+                      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor"
+                        stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z" />
+                        <line x1="7" y1="7" x2="7.01" y2="7" />
+                      </svg>
+                    </span>
+                    <div class="fm-feature-text">
+                      <strong>Best</strong>
+                      <span>Quality</span>
+                    </div>
+                  </div>
+                  <div class="fm-feature">
+                    <span class="fm-feature-icon">
+                      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor"
+                        stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path
+                          d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
+                        <polyline points="3.27 6.96 12 12.01 20.73 6.96" />
+                        <line x1="12" y1="22.08" x2="12" y2="12" />
+                      </svg>
+                    </span>
+                    <div class="fm-feature-text">
+                      <strong>Local</strong>
+                      <span>Sourcing</span>
+                    </div>
+                  </div>
+                </div>
+                <!-- Floating leaves over text area -->
+                <div class="floating-leaf leaf-1"></div>
+                <div class="floating-leaf leaf-2"></div>
+                <div class="floating-leaf leaf-3"></div>
+              </div>
+              <div class="hero-image-side freshmart-image-side">
+                <img src="assets/hero_slide2.png" alt="20 Minute Delivery" class="hero-slide-img">
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 3: Free Delivery -->
+          <div class="hero-slide">
+            <div class="hero-banner freshmart-banner">
+              <div class="hero-content">
+                <div class="freshmart-badge">
+                  <span class="badge-icon">🚚</span> Free Delivery
+                </div>
+                <h1 class="hero-title">Get <span>Free Delivery</span><br>On Orders Above ₹499</h1>
+                <p class="hero-subtitle">Fill your basket with fresh fruits, farm vegetables, healthy juices and pantry
+                  essentials and pay zero shipping fee at checkout.</p>
+                <div class="hero-cta freshmart-cta">
+                  <button class="btn-shop-now"
+                    onclick="document.getElementById('catalog-section').scrollIntoView({behavior: 'smooth'})">Fill Your
+                    Basket &rarr;</button>
+                  <button class="btn-how-works"
+                    onclick="document.getElementById('catalog-section').scrollIntoView({behavior: 'smooth'})">
+                    <span class="play-btn-circle">
+                      <svg viewBox="0 0 24 24" width="12" height="12" fill="currentColor">
+                        <polygon points="8 5 8 19 19 12 8 5" />
+                      </svg>
+                    </span>
+                    Learn More
+                  </button>
+                </div>
+                <div class="freshmart-features">
+                  <div class="fm-feature">
+                    <span class="fm-feature-icon">
+                      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor"
+                        stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 2a10 10 0 0 1 10 10c0 5.523-4.477 10-10 10S2 17.523 2 12A10 10 0 0 1 12 2z" />
+                        <path d="M12 22V12" />
+                      </svg>
+                    </span>
+                    <div class="fm-feature-text">
+                      <strong>Free</strong>
+                      <span>Shipping</span>
+                    </div>
+                  </div>
+                  <div class="fm-feature">
+                    <span class="fm-feature-icon">
+                      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor"
+                        stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="1" y="3" width="15" height="13" />
+                        <polygon points="16 8 20 8 23 11 23 16 16 16 16 8" />
+                        <circle cx="5.5" cy="18.5" r="2.5" />
+                        <circle cx="18.5" cy="18.5" r="2.5" />
+                      </svg>
+                    </span>
+                    <div class="fm-feature-text">
+                      <strong>Fast</strong>
+                      <span>Delivery</span>
+                    </div>
+                  </div>
+                  <div class="fm-feature">
+                    <span class="fm-feature-icon">
+                      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor"
+                        stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z" />
+                        <line x1="7" y1="7" x2="7.01" y2="7" />
+                      </svg>
+                    </span>
+                    <div class="fm-feature-text">
+                      <strong>₹499+</strong>
+                      <span>Orders</span>
+                    </div>
+                  </div>
+                  <div class="fm-feature">
+                    <span class="fm-feature-icon">
+                      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor"
+                        stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+                        <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+                      </svg>
+                    </span>
+                    <div class="fm-feature-text">
+                      <strong>Secure</strong>
+                      <span>Checkout</span>
+                    </div>
+                  </div>
+                </div>
+                <!-- Floating leaves over text area -->
+                <div class="floating-leaf leaf-1"></div>
+                <div class="floating-leaf leaf-2"></div>
+                <div class="floating-leaf leaf-3"></div>
+              </div>
+              <div class="hero-image-side freshmart-image-side">
+                <img src="assets/hero_slide3.png" alt="Free Delivery" class="hero-slide-img">
+              </div>
+            </div>
+          </div>
+
+
+          <!-- Slider Dots -->
+          <div class="slider-dots">
+            <span class="dot active" data-slide="0"></span>
+            <span class="dot" data-slide="1"></span>
+            <span class="dot" data-slide="2"></span>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- FreshMart Promotional Banners Section -->
+      <section class="section-container">
+        <div class="promo-banners-grid">
+          <!-- Healthy Living Banner -->
+          <div class="promo-banner-card healthy-living">
+            <div class="promo-content">
+              <span class="promo-tag">Healthy Living</span>
+              <h3 class="promo-title">Eat Fresh, Live Healthy</h3>
+              <p class="promo-subtitle">Up to 30% Off</p>
+              <button class="promo-btn" type="button" onclick="filterByCategory('vegetables')">Shop Fruits &
+                Veggies</button>
+            </div>
+            <div class="promo-image">
+              <img src="assets/cat_fruits.png" alt="Fresh Fruits and Vegetables">
+            </div>
+          </div>
+
+          <!-- Mega Deals Banner -->
+          <div class="promo-banner-card mega-deals">
+            <div class="promo-content">
+              <span class="promo-tag">Mega Deals</span>
+              <h3 class="promo-title">Super Saver Combo Packs</h3>
+              <p class="promo-subtitle">Up to 40% Off</p>
+              <button class="promo-btn" type="button" onclick="filterByCategory('dairy')">Shop Now</button>
+            </div>
+            <div class="promo-image">
+              <img src="assets/cat_dairy.png" alt="Combo Packs">
+            </div>
+          </div>
+
+          <!-- Limited Time Banner -->
+          <div class="promo-banner-card limited-time">
+            <div class="promo-content">
+              <span class="promo-tag">Limited Time</span>
+              <h3 class="promo-title">Beauty & Personal Care Sale</h3>
+              <p class="promo-subtitle">Up to 25% Off</p>
+              <button class="promo-btn" type="button" onclick="filterByCategory('bakery')">Shop Now</button>
+            </div>
+            <div class="promo-image">
+              <img src="assets/cat_beauty.png" alt="Personal Care"
+                style="filter: hue-rotate(30deg) saturate(1.3) brightness(1.1);">
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Best Selling Products Section -->
+      <section class="section-container">
+        <div class="section-header">
+          <h2 class="section-title">Best Selling Products</h2>
+          <a href="#" id="nav-deals" class="view-all-deals-link"
+            style="color: #f97316; font-weight: 600; font-size: 14px; display: flex; align-items: center; gap: 4px;">View
+            All Deals ➔</a>
+        </div>
+        <div id="best-sellers-container" class="products-grid">
+          <!-- Populated by JavaScript -->
+        </div>
+      </section>
+
+      <!-- Products Grid Section -->
+      <section id="catalog-section" class="section-container">
+        <div class="products-header-group">
+          <div class="deals-header-row" style="width: 100%; margin-bottom: 15px;">
+            <h2 class="section-title" style="margin-bottom: 5px;">Today best deals for you!</h2>
+          </div>
+
+          <!-- Tazaj Mart Style Visual Category Cards acting as filters -->
+          <div class="categories-slider-container" style="margin-bottom: 20px;">
+            <div class="categories-slider" id="categories-slider">
+
+              <div class="category-slide-card active cat-all" data-category="all">
+                <div class="cat-card-content">
+                  <h3>All Products</h3>
+                  <p>Full Catalog</p>
+                </div>
+                <div class="cat-card-img-wrapper">
+                  <img src="assets/cat_all.png" alt="All Products">
+                </div>
+              </div>
+
+              <div class="category-slide-card cat-veg" data-category="vegetables">
+                <div class="cat-card-content">
+                  <h3>Vegetables</h3>
+                  <p>Local Market</p>
+                </div>
+                <div class="cat-card-img-wrapper">
+                  <img src="assets/cat_veg.png" alt="Vegetable">
+                </div>
+              </div>
+
+              <div class="category-slide-card cat-fruits" data-category="fruits">
+                <div class="cat-card-content">
+                  <h3>Fruits</h3>
+                  <p>Fresh Picked</p>
+                </div>
+                <div class="cat-card-img-wrapper">
+                  <img src="assets/cat_fruits.png" alt="Fruits">
+                </div>
+              </div>
+
+              <div class="category-slide-card cat-dairy" data-category="dairy">
+                <div class="cat-card-content">
+                  <span class="deals-tab-badge-new"
+                    style="position: absolute; top: 12px; right: 12px; background-color: #f97316; color: white; font-size: 8px; font-weight: 800; padding: 2px 6px; border-radius: 3px; text-transform: uppercase;">New</span>
+                  <h3>Dairy & Milk</h3>
+                  <p>New Arrival</p>
+                </div>
+                <div class="cat-card-img-wrapper">
+                  <img src="assets/cat_dairy.png" alt="Dairy & Milk">
+                </div>
+              </div>
+
+              <div class="category-slide-card cat-bake" data-category="bakery">
+                <div class="cat-card-content">
+                  <h3>Bakery</h3>
+                  <p>In store delivery</p>
+                </div>
+                <div class="cat-card-img-wrapper">
+                  <img src="assets/cat_bake.png" alt="Bakery">
+                </div>
+              </div>
+
+              <div class="category-slide-card cat-snacks" data-category="snacks">
+                <div class="cat-card-content">
+                  <h3>Snacks</h3>
+                  <p>Tasty Treats</p>
+                </div>
+                <div class="cat-card-img-wrapper">
+                  <img src="assets/prod_topokki.png" alt="Snacks">
+                </div>
+              </div>
+
+              <div class="category-slide-card cat-chicken" data-category="chicken">
+                <div class="cat-card-content">
+                  <h3>Chicken</h3>
+                  <p>Antibiotic Free</p>
+                </div>
+                <div class="cat-card-img-wrapper">
+                  <img src="assets/prod_beef.png" alt="Chicken">
+                </div>
+              </div>
+
+              <div class="category-slide-card cat-meat" data-category="meat">
+                <div class="cat-card-content">
+                  <h3>Meat</h3>
+                  <p>Prime Cuts</p>
+                </div>
+                <div class="cat-card-img-wrapper">
+                  <img src="assets/cat_meat.png" alt="Meat">
+                </div>
+              </div>
+
+              <div class="category-slide-card cat-frozen" data-category="frozen">
+                <div class="cat-card-content">
+                  <h3>Frozen Food</h3>
+                  <p>Quick Meals</p>
+                </div>
+                <div class="cat-card-img-wrapper">
+                  <img src="assets/cat_fish.png" alt="Frozen Food">
+                </div>
+              </div>
+
+              <div class="category-slide-card cat-bevs" data-category="beverages">
+                <div class="cat-card-content">
+                  <h3>Beverages</h3>
+                  <p>Chilled Drinks</p>
+                </div>
+                <div class="cat-card-img-wrapper">
+                  <img src="assets/cat_bevs.png" alt="Beverages">
+                </div>
+              </div>
+
+              <div class="category-slide-card cat-choco" data-category="chocolate">
+                <div class="cat-card-content">
+                  <h3>Chocolate</h3>
+                  <p>Sweet Delights</p>
+                </div>
+                <div class="cat-card-img-wrapper">
+                  <img src="assets/prod_chocolate.png" alt="Chocolate" style="filter: hue-rotate(90deg);">
+                </div>
+              </div>
+
+              <!-- Next Arrow Card -->
+              <div class="category-slide-card cat-arrow-card" id="slide-cat-right-card">
+                <div class="green-circle-arrow">→</div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Interactive Sorting/Filters Bar matching the user screenshot -->
+          <div class="filters-bar-container">
+
+            <div class="filter-dropdown-wrapper">
+              <select id="sort-price-select" class="filter-dropdown-btn">
+                <option value="default">Price</option>
+                <option value="low-to-high">Price: Low to High</option>
+                <option value="high-to-low">Price: High to Low</option>
+              </select>
+            </div>
+
+            <div class="filter-dropdown-wrapper">
+              <select id="sort-rating-select" class="filter-dropdown-btn">
+                <option value="default">Review</option>
+                <option value="top-rated">Top Rated</option>
+              </select>
+            </div>
+
+            <div class="filter-dropdown-wrapper">
+              <select id="filter-color-select" class="filter-dropdown-btn">
+                <option value="all">Color</option>
+                <option value="green">Green</option>
+                <option value="red">Red</option>
+                <option value="yellow">Yellow</option>
+              </select>
+            </div>
+
+            <div class="filter-dropdown-wrapper">
+              <select id="filter-offer-select" class="filter-dropdown-btn">
+                <option value="all">Offer</option>
+                <option value="discount">Discount Deals</option>
+              </select>
+            </div>
+
+            <div class="filter-dropdown-wrapper">
+              <select id="filter-brand-select" class="filter-dropdown-btn">
+                <option value="all">Brands</option>
+                <option value="farm-fresh">Farm Fresh</option>
+                <option value="organic">Organic Basket</option>
+              </select>
+            </div>
+
+          </div>
+        </div>
+        <div id="products-container" class="products-grid">
+          <!-- Dynamic product cards populated by app.js -->
+        </div>
+      </section>
+
+      <!-- Cashback Banner -->
+      <section class="section-container">
+        <div class="cashback-banner-card">
+          <div class="cashback-content">
+            <h2>Get 20% Cash Back All the Time with a Subscription!</h2>
+            <p>On all grocery shopping.</p>
+            <button class="btn-primary" style="background-color: var(--secondary); border: none; box-shadow: none;">Get
+              Subscription →</button>
+          </div>
+          <div class="cashback-illustration">
+            <div class="mock-bag">
+              <span class="heart-icon">🧡</span>
+            </div>
+            <div class="mock-coin coin1">₹</div>
+            <div class="mock-coin coin2">₹</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Shop by Brands -->
+      <section class="section-container">
+        <div class="section-header">
+          <h2 class="section-title">Shop by brands</h2>
+        </div>
+        <div class="brands-grid">
+          <div class="brand-logo-card" title="Amul"><img
+              src="https://1000logos.net/wp-content/uploads/2023/11/Amul-Logo-tumb.jpg" alt="Amul"></div>
+          <div class="brand-logo-card" title="Barilla"><img
+              src="https://1000logos.net/wp-content/uploads/2022/01/Barilla-logo-tumb.jpg" alt="Barilla"></div>
+          <div class="brand-logo-card" title="Ben & Jerry's"><img
+              src="https://1000logos.net/wp-content/uploads/2023/11/Ben-and-Jerrys-Logo-tumb.jpg" alt="Ben & Jerry's">
+          </div>
+          <div class="brand-logo-card" title="Cadbury"><img
+              src="https://1000logos.net/wp-content/uploads/2020/09/Cadbury-logo-tumb-1.jpg" alt="Cadbury"></div>
+          <div class="brand-logo-card" title="Campbell's"><img
+              src="https://1000logos.net/wp-content/uploads/2021/10/Campbells-logo-tumb.jpg" alt="Campbell's"></div>
+          <div class="brand-logo-card" title="Beyond Meat"><img
+              src="https://1000logos.net/wp-content/uploads/2024/12/Beyond-Meat-Logo-tumb.png" alt="Beyond Meat">
+          </div>
+          <div class="brand-logo-card" title="Activia"><img
+              src="https://1000logos.net/wp-content/uploads/2020/07/Activia-Logo-tumb.jpg" alt="Activia"></div>
+          <div class="brand-logo-card" title="Arby's"><img
+              src="https://1000logos.net/wp-content/uploads/2017/08/Arbys-Logo.jpg" alt="Arby's"></div>
+          <div class="brand-logo-card" title="Bertolli"><img
+              src="https://1000logos.net/wp-content/uploads/2020/07/Bertolli-Logo-tumb.jpg" alt="Bertolli"></div>
+          <div class="brand-logo-card" title="Bounty"><img
+              src="https://1000logos.net/wp-content/uploads/2021/12/Bounty-logo-tumb.jpg" alt="Bounty"></div>
+          <div class="brand-logo-card" title="Breyers"><img
+              src="https://1000logos.net/wp-content/uploads/2023/11/Breyers-Logo-tumb.jpg" alt="Breyers"></div>
+          <div class="brand-logo-card" title="Butterfinger"><img
+              src="https://1000logos.net/wp-content/uploads/2020/08/Butterfinger-Logo-tumb.png" alt="Butterfinger">
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQs Section Accordion -->
+      <section class="section-container faq-section-container">
+        <div class="faq-layout">
+          <div class="faq-image-side">
+            <!-- Decorative Timeline Widget -->
+            <div class="faq-timeline-card">
+              <h3>Freshness Guarantee</h3>
+              <p>How we get organic groceries to your doorstep in 20 minutes:</p>
+
+              <div class="faq-timeline">
+                <div class="timeline-step">
+                  <div class="step-marker">
+                    <span class="step-dot"></span>
+                    <span class="step-line"></span>
+                  </div>
+                  <div class="step-content">
+                    <h4>1. Smart Ordering</h4>
+                    <p>Order is sent directly to your nearest local dark store.</p>
+                  </div>
+                </div>
+
+                <div class="timeline-step">
+                  <div class="step-marker">
+                    <span class="step-dot"></span>
+                    <span class="step-line"></span>
+                  </div>
+                  <div class="step-content">
+                    <h4>2. Handpicked Quality</h4>
+                    <p>Our experts choose the freshest organic produce for you.</p>
+                  </div>
+                </div>
+
+                <div class="timeline-step">
+                  <div class="step-marker">
+                    <span class="step-dot"></span>
+                  </div>
+                  <div class="step-content">
+                    <h4>3. 20-Min Delivery</h4>
+                    <p>Rider delivers fresh food to your door under 20 minutes.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="faq-helper-card">
+              <div class="helper-avatar-bg">
+                <img src="assets/logo.svg" alt="Green Basket Logo">
+              </div>
+              <div class="helper-badge">Green Basket Partner</div>
+            </div>
+          </div>
+
+          <div class="faq-accordion-side">
+            <h2 class="section-title" style="margin-bottom: 30px;">Frequently Asked Questions</h2>
+
+            <div class="accordion-item active">
+              <button class="accordion-header">
+                <span>Does Green Basket offer organic produce?</span>
+                <span class="accordion-arrow">▾</span>
+              </button>
+              <div class="accordion-content">
+                <p>Yes, Green Basket offers a selection of organic fruits and vegetables. These items are clearly
+                  labeled in the produce section.</p>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <button class="accordion-header">
+                <span>How do I place an order?</span>
+                <span class="accordion-arrow">▸</span>
+              </button>
+              <div class="accordion-content">
+                <p>Simply choose your delivery address, add products to your basket, select payment methods, and click
+                  order. It will arrive at your door in 20 minutes.</p>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <button class="accordion-header">
+                <span>Is there a minimum order value for delivery?</span>
+                <span class="accordion-arrow">▸</span>
+              </button>
+              <div class="accordion-content">
+                <p>There is no minimum order value, but orders above ₹499 qualify for completely free delivery.</p>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <button class="accordion-header">
+                <span>Does Green Basket offer sustainably sourced seafood?</span>
+                <span class="accordion-arrow">▸</span>
+              </button>
+              <div class="accordion-content">
+                <p>Yes! We partner with ocean-friendly local fisheries to provide sustainable fresh seafood
+                  selections.
+                </p>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <button class="accordion-header">
+                <span>What is Green Basket's return policy for fresh groceries?</span>
+                <span class="accordion-arrow">▸</span>
+              </button>
+              <div class="accordion-content">
+                <p>If you find any item not fresh, report it within 2 hours of delivery to get a full refund or
+                  immediate replacement.</p>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <button class="accordion-header">
+                <span>What payment methods do you accept?</span>
+                <span class="accordion-arrow">▸</span>
+              </button>
+              <div class="accordion-content">
+                <p>We accept all major Credit/Debit cards, UPI, Google Pay, Net Banking, and popular wallets.</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+
+
+      <!-- Why Shop With Green Basket Section -->
+      <section class="why-shop-section">
+        <div class="why-shop-container">
+          <div class="why-shop-images">
+            <div class="why-shop-img-wrapper large">
+              <img src="assets/hero.png" alt="Fresh Produce">
+            </div>
+            <div class="why-shop-img-wrapper small">
+              <img src="assets/images.jpg" alt="Grocery Shopping">
+            </div>
+          </div>
+          <div class="why-shop-content">
+            <h2 class="why-shop-title">Why Shop With Green Basket?</h2>
+            <ul class="why-shop-features">
+              <li class="why-shop-feature">
+                <span class="feature-icon">✓</span>
+                <span class="feature-text">Large selection of fresh and organic products</span>
+              </li>
+              <li class="why-shop-feature">
+                <span class="feature-icon">✓</span>
+                <span class="feature-text">Direct sourcing from trusted local farms</span>
+              </li>
+              <li class="why-shop-feature">
+                <span class="feature-icon">✓</span>
+                <span class="feature-text">Same-day delivery across major cities</span>
+              </li>
+              <li class="why-shop-feature">
+                <span class="feature-icon">✓</span>
+                <span class="feature-text">Competitive prices with weekly special offers</span>
+              </li>
+              <li class="why-shop-feature">
+                <span class="feature-icon">✓</span>
+                <span class="feature-text">Dedicated customer support team ready to help</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Combined App Download & Footer Top Section -->
+      <section class="section-container">
+        <div class="combined-banner">
+          <div class="combined-content-left">
+            <h2>Stay Home and Get All<br>Your Essentials From<br>Our Market!</h2>
+            <p>Download the app to start your seamless journey with Green Basket.</p>
+            <div class="app-buttons">
+              <a href="#" class="app-btn google-play">
+                <div class="btn-icon">▶</div>
+                <div class="btn-text">
+                  <span class="btn-small">GET IT ON</span>
+                  <span class="btn-large">Google Play</span>
+                </div>
+              </a>
+              <a href="#" class="app-btn app-store">
+                <div class="btn-icon">🍎</div>
+                <div class="btn-text">
+                  <span class="btn-small">Download on the</span>
+                  <span class="btn-large">App Store</span>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="combined-image">
+            <img src="assets/delivery.png" alt="Delivery person with groceries">
+          </div>
+          <div class="combined-content-right">
+            <h2>Seamless Fruit Delivery Home &amp; Office</h2>
+            <button type="button" id="start-healthy-journey-btn" class="btn-primary-orange">Start Your Healthy Journey
+              →</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ Feature Icons Section -->
+      <section class="section-container faq-features-section">
+        <div class="faq-features-grid">
+          <div class="faq-feature-item">
+            <div class="faq-feature-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <rect x="1" y="3" width="15" height="13" />
+                <polygon points="16 8 20 8 23 11 23 16 16 16 16 8" />
+                <circle cx="5.5" cy="18.5" r="2.5" />
+                <circle cx="18.5" cy="18.5" r="2.5" />
+              </svg>
+            </div>
+            <h4>Free Delivery</h4>
+            <p>On orders above ₹499</p>
+          </div>
+          <div class="faq-feature-item">
+            <div class="faq-feature-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2a10 10 0 1 0 0 20A10 10 0 0 0 12 2z" />
+                <path d="m9 12 2 2 4-4" />
+              </svg>
+            </div>
+            <h4>100% Fresh</h4>
+            <p>Handpicked quality</p>
+          </div>
+          <div class="faq-feature-item">
+            <div class="faq-feature-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <rect x="1" y="4" width="22" height="16" rx="2" ry="2" />
+                <line x1="1" y1="10" x2="23" y2="10" />
+              </svg>
+            </div>
+            <h4>Secure Payments</h4>
+            <p>Safe & secure checkout</p>
+          </div>
+          <div class="faq-feature-item">
+            <div class="faq-feature-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path
+                  d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.18 6.18l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z">
+                </path>
+              </svg>
+            </div>
+            <h4>24/7 Support</h4>
+            <p>Always here to help</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer class="main-footer">
+        <div class="section-container">
+          <div class="footer-grid">
+            <div class="footer-brand">
+              <div class="brand-section" style="margin-bottom: 20px;">
+                <div class="brand-icon"
+                  style="background: transparent; display: flex; align-items: center; justify-content: center; width: 36px; height: 36px;">
+                  <img src="assets/logo.svg" alt="Green Basket Logo"
+                    style="width: 100%; height: 100%; object-fit: contain;">
+                </div>
+                <div class="brand-name">Green<span>Basket</span></div>
+              </div>
+              <p style="color: var(--text-muted); font-size: 15px; margin-bottom: 25px;">Get the freshest groceries
+                delivered right to your home. Quick, efficient delivery to you.</p>
+            </div>
+            <div>
+              <h3 class="footer-heading">Services</h3>
+              <ul class="footer-links">
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Our Services</a></li>
+                <li><a href="#">Fruit & Veg</a></li>
+                <li><a href="#">Dairy & Eggs</a></li>
+                <li><a href="#">Bakery & Bread</a></li>
+              </ul>
+            </div>
+            <div>
+              <h3 class="footer-heading">Account</h3>
+              <ul class="footer-links">
+                <li><a href="#">My Account</a></li>
+                <li><a href="#">My Cart</a></li>
+                <li><a href="#">Checkout</a></li>
+                <li><a href="#">Orders</a></li>
+                <li><a href="#">Wishlist</a></li>
+              </ul>
+            </div>
+            <div>
+              <h3 class="footer-heading">Corporate</h3>
+              <ul class="footer-links">
+                <li><a href="#">Corporate Gifting</a></li>
+                <li><a href="#">Bulk Orders</a></li>
+                <li><a href="#">Business Accounts</a></li>
+                <li><a href="#">Partnerships</a></li>
+                <li><a href="#">Careers</a></li>
+              </ul>
+            </div>
+            <div>
+              <h3 class="footer-heading">Popular</h3>
+              <ul class="footer-links">
+                <li><a href="#">Fruits</a></li>
+                <li><a href="#">Vegetables</a></li>
+                <li><a href="#">Dairy</a></li>
+                <li><a href="#">Beverages</a></li>
+                <li><a href="#">Snacks</a></li>
+              </ul>
+            </div>
+            <div>
+              <h3 class="footer-heading">Install App</h3>
+              <ul class="footer-links">
+                <li><a href="#">Google Play</a></li>
+                <li><a href="#">App Store</a></li>
+              </ul>
+              <div class="payment-methods">
+                <img src="https://img.icons8.com/color/48/visa.png" alt="Visa" />
+                <img src="https://img.icons8.com/color/48/mastercard.png" alt="Mastercard" />
+                <img src="https://img.icons8.com/color/48/paypal.png" alt="PayPal" />
+                <img src="https://img.icons8.com/color/48/google-pay.png" alt="Google Pay" />
+              </div>
+            </div>
+          </div>
+          <div class="footer-bottom">
+            <div class="footer-contact">
+              <div class="contact-item">
+                <span class="contact-icon">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path
+                      d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.18 6.18l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z">
+                    </path>
+                  </svg>
+                </span>
+                <span>9100000</span>
+              </div>
+              <div class="contact-item">
+                <span class="contact-icon">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path
+                      d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.18 6.18l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z">
+                    </path>
+                  </svg>
+                </span>
+                <span>9100000</span>
+              </div>
+            </div>
+            <div class="footer-social">
+              <a href="#" class="social-icon" aria-label="Facebook">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                </svg>
+              </a>
+              <a href="#" class="social-icon" aria-label="Instagram">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                </svg>
+              </a>
+              <a href="#" class="social-icon" aria-label="Twitter">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path
+                    d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z">
+                  </path>
+                </svg>
+              </a>
+              <a href="#" class="social-icon" aria-label="Pinterest">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M8 20l4-9" />
+                  <path
+                    d="M10.7 14c.437 1.263 1.43 2 2.55 2 2.071 0 3.75-1.679 3.75-3.75 0-2.071-1.679-3.75-3.75-3.75-2.071 0-3.75 1.679-3.75 3.75 0 .368.056.721.16 1.056" />
+                  <path
+                    d="M12 4C6.477 4 2 8.477 2 14c0 4.236 2.636 7.855 6.356 9.312-.18-.907-.34-2.313.07-3.309l1.015-4.25" />
+                  <path d="M12 4c5.523 0 10 4.477 10 10 0 4.236-2.636 7.855-6.356 9.312" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </footer>
+
+    </main>
+
+    <!-- FRESH ARRIVALS VIEW -->
+    <main id="fresh-arrivals-view" class="page-view">
+      <section class="section-container">
+        <div class="back-btn-container" style="margin-bottom: 20px;">
+          <button class="back-to-store-btn"
+            style="background: none; border: none; color: var(--primary); font-weight: 700; cursor: pointer; display: flex; align-items: center; gap: 8px; font-size: 14px; padding: 6px 12px; border-radius: 8px; transition: all 0.2s ease;">
+            <span>←</span> Back to Storefront
+          </button>
+        </div>
+
+        <div class="fresh-hub-header">
+          <div>
+            <h2 class="section-title title-with-emoji" style="margin-bottom: 6px;">🌱 <span class="title-text">Fresh
+                Arrivals</span></h2>
+            <p style="color: var(--text-muted); font-size: 14px;">Hand-selected organic produce and farm fresh
+              essentials, harvested daily and delivered straight to your doorstep.</p>
+          </div>
+
+          <!-- Left Hero Panel -->
+          <div class="fresh-hero-card" style="margin-bottom: 25px;">
+            <div>
+              <div class="fresh-hero-badge">
+                <span class="pulse-dot"></span>
+                <span>Live from Farm</span>
+              </div>
+              <h3 class="fresh-hero-title">Farm-to-Table in 20 Mins</h3>
+              <p class="fresh-hero-desc">Sourced directly from certified growers. We maintain a strict
+                temperature-controlled cold chain so your produce arrives at peak nutritional value.</p>
+            </div>
+
+            <div class="fresh-features-row">
+              <div class="fresh-feature-item">
+                <span class="fresh-feature-icon">👨‍🌾</span>
+                <span class="fresh-feature-title">Picked at Dawn</span>
+                <span class="fresh-feature-subtitle">Same-day harvest</span>
+              </div>
+              <div class="fresh-feature-item">
+                <span class="fresh-feature-icon">⚡</span>
+                <span class="fresh-feature-title">20-Min Delivery</span>
+                <span class="fresh-feature-subtitle">Express routing</span>
+              </div>
+              <div class="fresh-feature-item">
+                <span class="fresh-feature-icon">❄️</span>
+                <span class="fresh-feature-title">Cold-Chained</span>
+                <span class="fresh-feature-subtitle">Under 4°C always</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Dynamic Category Pills -->
+          <div class="fresh-filter-pills" id="fresh-pills-container">
+            <button class="fresh-pill active" data-category="all">All Freshness</button>
+            <button class="fresh-pill" data-category="vegetables">🥕 Farm Vegetables</button>
+            <button class="fresh-pill" data-category="fruits">🍎 Fresh Fruits</button>
+            <button class="fresh-pill" data-category="dairy">🥛 Organic Dairy</button>
+            <button class="fresh-pill" data-category="bakery">🍞 Bakery Specials</button>
+          </div>
+        </div>
+
+        <div id="fresh-arrivals-grid" class="products-grid">
+          <!-- Populated dynamically via JS filtering for fresh arrivals -->
+        </div>
+      </section>
+    </main>
+
+    <!-- WEEKLY HIGHLIGHTS & SPECIAL OFFERS VIEW -->
+    <main id="deals-offers-view" class="page-view">
+      <section class="section-container">
+        <div class="back-btn-container" style="margin-bottom: 20px;">
+          <button class="back-to-store-btn"
+            style="background: none; border: none; color: var(--primary); font-weight: 700; cursor: pointer; display: flex; align-items: center; gap: 8px; font-size: 14px; padding: 6px 12px; border-radius: 8px; transition: all 0.2s ease;">
+            <span>←</span> Back to Storefront
+          </button>
+        </div>
+        <div class="fresh-hub-header">
+          <h2 class="section-title title-with-emoji">🔥 <span class="title-text">Weekly Highlights & Special
+              Offers</span></h2>
+          <p style="color: var(--text-muted); font-size: 14px;">Big discounts and exclusive bundles updated every
+            Monday. Don't miss out!</p>
+        </div>
+
+        <!-- Countdown and Highlight Card -->
+        <div class="deals-highlight-banner"
+          style="background: linear-gradient(135deg, #f97316 0%, #ea580c 100%); color: white; padding: 30px; border-radius: 16px; margin-bottom: 30px; display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: center; box-shadow: 0 10px 15px -3px rgba(249, 115, 22, 0.15);">
+          <div>
+            <span
+              style="background: rgba(255,255,255,0.2); padding: 4px 10px; border-radius: 20px; font-size: 12px; font-weight: 700; text-transform: uppercase;">Deal
+              of the Week</span>
+            <h3 style="font-size: 28px; font-weight: 800; margin-top: 10px; margin-bottom: 15px; color: white;">Up to
+              40% OFF Premium Groceries</h3>
+            <div class="countdown-timer" style="display: flex; gap: 10px; font-family: monospace;">
+              <div style="background: rgba(0,0,0,0.2); padding: 10px 15px; border-radius: 8px; text-align: center;">
+                <span style="font-size: 20px; font-weight: 800;" id="timer-hours">23</span><br><span
+                  style="font-size: 10px; opacity: 0.8;">Hrs</span>
+              </div>
+              <div style="background: rgba(0,0,0,0.2); padding: 10px 15px; border-radius: 8px; text-align: center;">
+                <span style="font-size: 20px; font-weight: 800;" id="timer-minutes">59</span><br><span
+                  style="font-size: 10px; opacity: 0.8;">Min</span>
+              </div>
+              <div style="background: rgba(0,0,0,0.2); padding: 10px 15px; border-radius: 8px; text-align: center;">
+                <span style="font-size: 20px; font-weight: 800;" id="timer-seconds">59</span><br><span
+                  style="font-size: 10px; opacity: 0.8;">Sec</span>
+              </div>
+            </div>
+          </div>
+          <div class="deals-coupon-box"
+            style="background: rgba(255, 255, 255, 0.15); border: 2px dashed rgba(255,255,255,0.4); padding: 20px; border-radius: 12px; text-align: center;">
+            <h4 style="margin-bottom: 5px; color: white;">Use Promo Code</h4>
+            <div
+              style="background: white; color: #ea580c; font-weight: 800; padding: 10px; border-radius: 6px; font-size: 20px; letter-spacing: 2px; margin-bottom: 10px;">
+              GREEN30</div>
+            <p style="font-size: 12px; opacity: 0.9; margin: 0;">Get flat 30% cashback on your first organic basket
+              order</p>
+          </div>
+        </div>
+
+        <div id="deals-offers-grid" class="products-grid">
+          <!-- Populated dynamically via JS filtering for discounted items -->
+        </div>
+      </section>
+    </main>
+
+    <!-- MEAL PREP GUIDES VIEW -->
+    <main id="meal-prep-view" class="page-view">
+      <section class="section-container">
+        <div class="back-btn-container" style="margin-bottom: 20px;">
+          <button class="back-to-store-btn"
+            style="background: none; border: none; color: var(--primary); font-weight: 700; cursor: pointer; display: flex; align-items: center; gap: 8px; font-size: 14px; padding: 6px 12px; border-radius: 8px; transition: all 0.2s ease;">
+            <span>←</span> Back to Storefront
+          </button>
+        </div>
+        <div class="fresh-hub-header">
+          <h2 class="section-title title-with-emoji">🥗 <span class="title-text">Curated Meal Prep Guides</span></h2>
+          <p style="color: var(--text-muted); font-size: 14px;">Eat healthy, save time. Click on any meal guide to
+            view instructions and add all ingredients directly to your basket!</p>
+        </div>
+
+        <div id="meal-prep-container" class="meal-prep-grid">
+          <!-- Meal Prep Cards populated dynamically by JS -->
+        </div>
+      </section>
+    </main>
+
+    <!-- LIVE ORDER STATUS VIEW -->
+    <main id="order-status-view" class="page-view">
+      <section class="section-container">
+        <div class="back-btn-container" style="margin-bottom: 20px;">
+          <button class="back-to-store-btn"
+            style="background: none; border: none; color: var(--primary); font-weight: 700; cursor: pointer; display: flex; align-items: center; gap: 8px; font-size: 14px; padding: 6px 12px; border-radius: 8px; transition: all 0.2s ease;">
+            <span>←</span> Back to Storefront
+          </button>
+        </div>
+        <div class="fresh-hub-header">
+          <h2 class="section-title title-with-emoji">📍 <span class="title-text">Live Order Status Tracker</span></h2>
+          <p style="color: var(--text-muted); font-size: 14px;">Track your farm-to-table delivery in real-time. Fast
+            20-minute delivery promise.</p>
+        </div>
+
+        <div class="order-tracker-card" id="order-tracker-container">
+          <!-- Dynamic Tracker UI populated by JS -->
+        </div>
+      </section>
+    </main>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-overlay" id="cart-overlay"></div>
+    <div class="cart-sidebar" id="cart-sidebar">
+      <div class="cart-header">
+        <h2>Your Cart</h2>
+        <button class="close-cart-btn" id="close-cart">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+      <div class="cart-items" id="cart-items">
+        <!-- Cart items will be rendered here -->
+      </div>
+      <div class="cart-footer">
+        <div class="cart-total">
+          <span>Total:</span>
+          <span class="total-amount" id="cart-total">₹0.00</span>
+        </div>
+        <button class="checkout-btn">Proceed to Checkout</button>
+      </div>
+    </div>
+
+    <!-- Interactive Modals Container -->
+    <!-- 1. Checkout Modal -->
+    <div class="modal-overlay" id="checkout-modal">
+      <div class="modal-card">
+        <button class="modal-close-btn">&times;</button>
+        <div class="modal-header">
+          <h2>Complete Your Order</h2>
+          <p>Please enter your delivery details below</p>
+        </div>
+        <form id="checkout-form" class="modal-form">
+          <div class="form-group">
+            <label for="checkout-name">Full Name</label>
+            <input type="text" id="checkout-name" required placeholder="Enter your full name">
+          </div>
+          <div class="form-group">
+            <label for="checkout-phone">Phone Number</label>
+            <input type="tel" id="checkout-phone" required placeholder="Enter 10-digit mobile number"
+              pattern="[0-9]{10}">
+          </div>
+          <div class="form-group">
+            <label for="checkout-address">Delivery Address</label>
+            <textarea id="checkout-address" required placeholder="Street address, Apartment, City, Pincode"
+              rows="3"></textarea>
+          </div>
+          <div class="form-group">
+            <label>Payment Method</label>
+            <div class="payment-selector">
+              <label class="payment-option active">
+                <input type="radio" name="payment-method" value="upi" checked>
+                <span class="pay-icon">📱</span> UPI / GPay
+              </label>
+              <label class="payment-option">
+                <input type="radio" name="payment-method" value="card">
+                <span class="pay-icon">💳</span> Card
+              </label>
+              <label class="payment-option">
+                <input type="radio" name="payment-method" value="cod">
+                <span class="pay-icon">💵</span> Cash on Delivery
+              </label>
+            </div>
+          </div>
+          <div class="checkout-summary">
+            <div class="summary-row">
+              <span>Items Subtotal</span>
+              <span id="checkout-subtotal">₹0.00</span>
+            </div>
+            <div class="summary-row">
+              <span>Delivery Charge</span>
+              <span id="checkout-delivery-charge">₹40.00</span>
+            </div>
+            <div class="summary-row grand-total">
+              <span>Total Payable</span>
+              <span id="checkout-grand-total">₹0.00</span>
+            </div>
+          </div>
+          <button type="submit" class="btn-primary modal-submit-btn">Place Order & Track Live 🚀</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- 2. Subscription Modal -->
+    <div class="modal-overlay" id="subscription-modal">
+      <div class="modal-card subscription-card">
+        <button class="modal-close-btn">&times;</button>
+        <div class="modal-header">
+          <span class="premium-badge">🌟 Green Basket VIP</span>
+          <h2>Get 20% Cashback on All Orders!</h2>
+          <p>Subscribe to our VIP program and save big on every grocery run.</p>
+        </div>
+        <div class="subscription-plans">
+          <div class="plan-card active" data-plan="monthly">
+            <div class="plan-badge">Popular</div>
+            <h3>Monthly VIP</h3>
+            <div class="plan-price">₹199<span>/month</span></div>
+            <ul class="plan-perks">
+              <li>✓ 20% Cash Back on all items</li>
+              <li>✓ Free Delivery on all orders</li>
+              <li>✓ Priority support & exclusive deals</li>
+            </ul>
+          </div>
+          <div class="plan-card" data-plan="annual">
+            <div class="plan-badge saving">Save 60%</div>
+            <h3>Annual VIP</h3>
+            <div class="plan-price">₹999<span>/year</span></div>
+            <ul class="plan-perks">
+              <li>✓ 20% Cash Back on all items</li>
+              <li>✓ Free Delivery on all orders</li>
+              <li>✓ Priority support & exclusive deals</li>
+            </ul>
+          </div>
+        </div>
+        <button id="subscribe-submit-btn" class="btn-primary modal-submit-btn"
+          style="background-color: var(--secondary)">Subscribe Now & Get 20% Off 🚀</button>
+      </div>
+    </div>
+
+    <!-- 3. Help & Support Modal -->
+    <div class="modal-overlay" id="support-modal">
+      <div class="modal-card">
+        <button class="modal-close-btn">&times;</button>
+        <div class="modal-header">
+          <h2>Help & Support Center</h2>
+          <p>Have questions or need help with an order? Send us a message!</p>
+        </div>
+        <form id="support-form" class="modal-form">
+          <div class="form-group">
+            <label for="support-email">Email Address</label>
+            <input type="email" id="support-email" required placeholder="Enter your email address">
+          </div>
+          <div class="form-group">
+            <label for="support-category">What can we help you with?</label>
+            <select id="support-category" class="filter-dropdown-btn"
+              style="width: 100%; border: 1px solid var(--border-color); padding: 10px; border-radius: 8px;">
+              <option value="delivery">Delivery Status / Late Delivery</option>
+              <option value="refund">Refund / Freshness Claim</option>
+              <option value="payment">Payment Issue</option>
+              <option value="other">General Inquiry</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="support-message">Message</label>
+            <textarea id="support-message" required placeholder="Describe your issue in detail..." rows="4"></textarea>
+          </div>
+          <button type="submit" class="btn-primary modal-submit-btn">Submit Ticket ✉️</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- 4. App Download Modal -->
+    <div class="modal-overlay" id="app-download-modal">
+      <div class="modal-card qr-download-card" style="max-width: 400px; text-align: center;">
+        <button class="modal-close-btn">&times;</button>
+        <div class="modal-header">
+          <h2>Download Green Basket App</h2>
+          <p>Scan the QR code below or visit the App Store to download our official mobile app.</p>
+        </div>
+        <div class="qr-container"
+          style="background: white; padding: 20px; border-radius: 12px; display: inline-block; margin: 20px auto; border: 1px solid #eee;">
+          <!-- A placeholder styled QR Code -->
+          <div
+            style="width: 180px; height: 180px; background: repeating-conic-gradient(from 45deg, #111 0deg 90deg, #fff 0deg 180deg) 0 0/20px 20px; border-radius: 4px; position: relative; margin: 0 auto;">
+            <div
+              style="position: absolute; top: 35px; left: 35px; width: 110px; height: 110px; background: white; display: flex; align-items: center; justify-content: center; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+              <img src="assets/logo.svg" alt="GB Logo" style="width: 60px; height: 60px;">
+            </div>
+          </div>
+        </div>
+        <div style="font-size: 14px; font-weight: 600; margin-bottom: 20px; color: var(--text-main);">Scan to get
+          started
+          on iOS & Android</div>
+        <div style="display: flex; justify-content: center; gap: 15px;">
+          <span class="app-btn-mini"
+            style="background: var(--bg-surface); padding: 8px 15px; border-radius: 8px; font-size: 12px; border: 1px solid var(--border-color); font-weight: 600; display: flex; align-items: center; gap: 6px;">▶
+            Google Play</span>
+          <span class="app-btn-mini"
+            style="background: var(--bg-surface); padding: 8px 15px; border-radius: 8px; font-size: 12px; border: 1px solid var(--border-color); font-weight: 600; display: flex; align-items: center; gap: 6px;">🍎
+            App Store</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+
+</html>
